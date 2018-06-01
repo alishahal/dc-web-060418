@@ -20,3 +20,6 @@
 
 - My data is set up differently:  Players are an array of hashes as opposed to one hash with player names as keys
 
+- Start solving, TDD feedback
+
+- Demo some uses of pry.  
