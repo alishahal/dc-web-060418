@@ -117,47 +117,43 @@ def game_hash
   }
 end
 
-puts game_hash[:away][:players][2]
-# def num_points_scored(player_name)
-#   # get a list of all the players
-#   # find the player whose name matches the argument 'player_name'
-#   # return that player's points
-# end
+def num_points_scored(name)
+  player = player_stats(name)
+  player[:points]
+end
 
+def get_all_players
+# returns array of each player's hash
+  game_hash.values.map do |team|
+    team[:players]
+  end.flatten
+end
 
+def player_stats(name)
+# takes a name and returns the hash for that player
+  get_all_players.find {|player| player[:player_name]==name}
+end
 
+def shoe_size(name)
+  player_stats(name)[:shoe]
+end
 
-# # EXERCISE:
-# # Define a method called get_names that takes an array of instructors
-# # and returns just their names.
-# instructors = [
-#   {name: 'Alex', hometown: 'upstate ny', mood: 'excited'},
-#   {name: 'rachel', hometown: 'maine'},
-#   {name: 'maxwell', hometwon: 'brookyln'}
-# ]
-#
-# def get_names(instructors)
-#
-# end
+def team_colors(team)
+  get_team_info(team)[:colors]
+end
 
+def get_team_info(team_name)
+  game_hash.values.find do |team|
+    team[:team_name] == team_name
+  end
+end
 
+def team_names
+  game_hash.values.map {|team| team[:team_name]}
+end
 
+def player_numbers(team)
+  get_team_info(team)[:players].map { |player| player[:number] }
+end
 
-# def get_players
-#
-# end
-
-
-
-# # EXERCISE
-# # What do the following return?
-#
-# arr = (1..100).to_a
-#
-# arr.map do |num|
-#   num.even?
-# end
-#
-# arr.select do |num|
-#   7
-# end
+puts "yo"
