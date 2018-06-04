@@ -116,3 +116,44 @@ def game_hash
     }
   }
 end
+
+def get_all_players
+  players = game_hash.values.map do |team_info|
+    team_info[:players]
+  end
+  players.flatten
+end
+
+def get_player(player_name)
+  get_all_players.each do |player_info|
+    if player_info[:player_name] == player_name
+      return player_info
+    end
+  end
+end
+
+def num_points_scored(player)
+  get_player(player)[:points]
+end
+
+def shoe_size(player)
+  get_player(player)[:shoe]
+end
+
+def team_info(team)
+  game_hash.values.each do |team_info|
+    if team_info[:team_name] == team
+      return team_info
+    end
+  end
+end
+
+def team_colors(team)
+  team_info = team_info(team)
+  team_info[:colors]
+end
+
+# num_points_scored("Jason Terry")
+# binding.pry
+# puts "sup"
+
