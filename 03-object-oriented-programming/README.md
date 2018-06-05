@@ -1,6 +1,3 @@
-# ruby-oo
-
-You can start with an empty rb file. You'll want to use Pry in some way to run/debug your code, so maybe have a Gemfile with `gem "Pry"`.
 
 ## SWBATs
 
