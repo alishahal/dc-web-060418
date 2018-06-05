@@ -1,3 +1,10 @@
+- How to ask for help
+    - Know your question: "Rubber ducking"
+    - Google
+    - Slack / Table Groups
+    - Here's what I tried
+    - Ask an instructor 
+
 - define request/response cycle; client/server
 - reddit.com just gives back HTML (text)
 - reddit.com/.json
