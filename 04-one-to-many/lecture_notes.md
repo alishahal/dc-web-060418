@@ -1,3 +1,6 @@
+- Make a note of blog presentations next week
+- Optional review tomorrow (Morgan - OO Person)
+
  ## Review so far
  	- We can create a class, which is a blueprint for a "model", which represents an object.
  	-We can create, or instantiate, an "instance" of the object
