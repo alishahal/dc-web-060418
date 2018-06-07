@@ -1,27 +1,20 @@
 class Tweet
 
-	attr_reader :message, :user
+    attr_reader :message, :user
 
-	@@all = []
+    @@all = []
 
-	def initialize(message, user)
-		@message = message
-		@user = user
-		@@all << self
-	end
+    def initialize(message, user)
+        @message, @user = message, user
+        @@all << self
+    end
 
-	def username
-		self.user.username
-	end
+    def username
+        self.user.username
+    end
 
-	def self.all
-		# returns all tweets from all users
-		@@all
-	end
-
-	def likers
-	#returns all Users who have liked this tweet
-		Favorite.all.select{|favorite| favorite.tweet == self}.collect{|favorite| favorite.user}
-	end
+    def self.all
+        @@all
+    end
 
 end
