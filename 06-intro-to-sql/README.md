@@ -7,6 +7,18 @@
 
 ## What is SQL
 
-## What is SQL for
+- a way to access a database
+    - a way of storing data in a table to be accessed
+    - data is held; doesn't disappear
+- Structured Query Language
 
+## What is SQL for
 ## What kinds of operations can we do in SQL
+
+- Create tables / data 
+- Read data based on conditions
+- Update data in a database / table
+- Delete data
+
+CRUD - Create / Read / Update / Delete
+
