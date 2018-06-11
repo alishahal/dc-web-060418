@@ -1,3 +1,5 @@
+Paul's lecture notes
+
 - What is SQL?
     - Structured Query Language
 
