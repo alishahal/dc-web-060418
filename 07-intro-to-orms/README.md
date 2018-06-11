@@ -1,16 +1,16 @@
 # Intro to ORMS
 
 
-## The world so far
-
-  * Tweet.rb defines the class Tweet, which has the attributes of a `message` body and `belongs_to` a User object
-  * User.rb defines a `User` object which has a Username and an array of Tweets
-  * Like.rb is a class defining a `join` table which connects many Users to many Tweets
-  * Each class has class and instance methods to give us access to CRUD functionality
-  * We have no way to make data persist between sessions
-
 ## Objectives
+  - Understand the purpose of a Gemfile and Rake tasks
+  - Build our own Rake tasks
+  - Correctly implement foreign key relationship
+  - Create SQL tables that correspond to Ruby classes
+  - Organize code files in a logical manner
+  - Utilize an environment file to set up database connection and other aspects of code environment
+
   
   
 ## Deliverables
 
+  - Build out methods on the Author model to perform all CRUD actions at the database level
