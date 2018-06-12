@@ -4,27 +4,3 @@ desc "Loads a console"
 task :console do
     Pry.start
 end
-
-desc "Says hello"
-task :hi do
-    puts "Hello everyone!"
-end
-
-desc "Set up database"
-task :db_setup do
-    book_sql = <<-SQL
-        CREATE TABLE IF NOT EXISTS books(
-            id integer,
-            title varchar(255),
-            author_id integer
-        );
-    SQL
-    author_sql = <<-SQL
-        CREATE TABLE IF NOT EXISTS authors(
-            id integer,
-            name varchar(255),
-        );
-    SQL
-    DB[:conn].execute(book_sql)
-    DB[:conn].execute(author_sql)
-end
