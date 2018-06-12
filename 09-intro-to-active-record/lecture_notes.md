@@ -1,8 +1,8 @@
 - Go over objectives
 
-- Review artist-backup created earlier in the week
+- Review author-backup created earlier in the week
 
-- What is Rake?
+- What is Rake? (review)
 	- Helps to do tasks
 	- For example `rake db:migrate`
 

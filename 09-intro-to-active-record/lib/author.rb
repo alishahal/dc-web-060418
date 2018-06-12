@@ -27,7 +27,7 @@ class Author
             DB.execute(sql, self.name)
             sql = "SELECT last_insert_rowid()"
             self.id = DB.execute(sql)[0][0]
-        else. # just update the row in the db
+        else # just update the row in the db
             sql = <<-SQL
                 UPDATE authors SET (name) = ? WHERE id = ?
             SQL

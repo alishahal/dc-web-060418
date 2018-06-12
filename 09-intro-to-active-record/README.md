@@ -2,8 +2,7 @@
 
 ## Objectives
 
-* Practice creating migrations for updating the database structurei
-* Distinguish between and define "model", "class", and "table"
+* Practice creating migrations for updating the database structure
 * Practice with ActiveRecord::Base instance and class methods
 * Perform persistent CRUD actions on one model using ActiveRecord
 
