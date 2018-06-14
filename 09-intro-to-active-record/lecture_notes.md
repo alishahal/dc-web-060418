@@ -3,13 +3,15 @@
 - Review author-backup created earlier in the week
 
 - Show Seed file
-
+- Demo what happens when seed file is run more than once
 - Point out new methods of `find_by_name` and `find_or_create`
+
+- reset database and reseed using `find_or_create` method
+
 - What is Rake? (review)
 	- Helps to do tasks
 	- For example `rake db:migrate`
 
-get active record
 
 connect to database
 	- in environment file
@@ -20,10 +22,22 @@ connect to database
 	require_all 'lib'
 	# setting up the database connection (old way)
 	DB = SQLite3::Database.new("chinook.db")
-	```
+```
 
 	new way:
-	```
+get active record 
+
+- Uncomment:
+	- Gemfile 
+		- `gem 'activerecord'`
+		- `gem 'sinatra-activerecord'`
+	- database.yml
+	- environment.rb
+		- and comment out DB line
+	- Rakefile
+		- `require 'sinatra/activerecord/rake'`
+
+```
 	ActiveRecord::Base.establish_connection({
 	adapter: 'sqlite3',
 	database: 'test.db', 
