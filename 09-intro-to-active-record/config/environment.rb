@@ -10,6 +10,3 @@ DB = SQLite3::Database.new("db/development.db")
 # )
 
 # ActiveRecord::Base.logger = Logger.new(STDOUT)
-
-require_relative '../lib/book.rb'
-require_relative '../lib/author.rb'

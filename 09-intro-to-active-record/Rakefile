@@ -1,4 +1,6 @@
 require_relative './config/environment'
+require_relative './lib/author.rb'
+
 # require 'sinatra/activerecord/rake'
 # require 'rake'
 
@@ -14,6 +16,14 @@ end
 
 desc "Set up database"
 task :db_setup do
+    drop_book_table_sql = <<-SQL
+        DROP TABLE IF EXISTS books;
+    SQL
+    DB.execute(drop_book_table_sql)
+    drop_author_table_sql = <<-SQL
+        DROP TABLE IF EXISTS authors;
+    SQL
+    DB.execute(drop_author_table_sql)
     book_sql = <<-SQL
         CREATE TABLE IF NOT EXISTS books(
             id integer PRIMARY KEY,

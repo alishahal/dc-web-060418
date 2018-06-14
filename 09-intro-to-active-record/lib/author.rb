@@ -1,3 +1,5 @@
+require_relative '../config/environment'
+
 class Author
 
     attr_accessor :name, :id
@@ -15,6 +17,24 @@ class Author
     def self.create(name)
         author = Author.new(name)
         author.save
+    end
+
+    def self.find_by_name(name)
+        sql = <<-SQL
+            SELECT * from authors 
+            WHERE name LIKE ?
+        SQL
+        results = DB.execute(sql, name)[0]
+        if results
+            Author.make_object_from_row(results)
+        else
+            return nil
+        end
+    end
+
+    def self.find_or_create(name)
+        author = Author.find_by_name(name)
+        author ||= Author.create(name)
     end
 
     def save
