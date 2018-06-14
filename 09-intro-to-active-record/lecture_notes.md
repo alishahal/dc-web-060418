@@ -110,6 +110,8 @@ class CreateAuthors < ActiveRecord::Migration
 end
 ```
 
+- show schema.rb
+
 sqlite3 db/library.db
 .tables
 .schema authors
