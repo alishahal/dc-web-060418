@@ -61,10 +61,7 @@ ActiveRecord::Base  # point out namespacing /module
 	- used to establish connection
 	- in labs used to access methods we've been writing in SQL
 
-make a db folder and put dbs in there.  make sub directory migrate
-
-Rake -T has not added any extra tasks as expected
-http://api.rubyonrails.org/classes/ActiveRecord/Tasks/DatabaseTasks.html  
+make a db folder and put dbs in there.  make sub directory `migrate`
 
 Gemfile
 	gem 'activerecord'
@@ -92,14 +89,20 @@ config/environment.rb
 	require_all 'lib'
 
 
+- Delete the database manually
+- Comment out custom db rake tasks
+- Create with rake db:create, show empty database
+
+- Define migration (a way to change our table's schema) and their importance (tracks history, shareable between team members)
+
 Make a migration
 	up/down vs change
 
 ```
-class CreateArtists < ActiveRecord::Migration
+class CreateAuthors < ActiveRecord::Migration
 
 	def change
-		create_table :artists do |t|
+		create_table :authors do |t|
 			t.string :name
 		end
 	end
@@ -107,13 +110,34 @@ class CreateArtists < ActiveRecord::Migration
 end
 ```
 
-in rake console
-	migration = CreateArtists.new
-	ls migration to show some methods
-	migration.change to execute
-
-sqlite3 db/test.db
+sqlite3 db/library.db
 .tables
-.schema artists
+.schema authors
+
+- change Author to BackupAuthor; make Author.rb
+
+```
+class Author < ActiveRecord::Base
+
+end
+```
+- seed data
 
 add a column
+- rake db:create_migration NAME=add_penname_to_authors
+	- takes care of naming
+	- datetime stamped
+
+
+```
+class Author < ActiveRecord::Base
+
+    def all_names
+        if self.penname
+            puts "#{self.name} aka #{self.penname}"
+        else
+            puts "This author uses their real name, #{self.name}"
+        end
+    end
+end
+```
