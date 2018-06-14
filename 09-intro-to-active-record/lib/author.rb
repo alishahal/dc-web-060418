@@ -19,7 +19,7 @@ class Author
         author.save
     end
 
-    def self.find_by_name(name)
+    def self.find_by(name)
         sql = <<-SQL
             SELECT * from authors 
             WHERE name LIKE ?
@@ -32,7 +32,7 @@ class Author
         end
     end
 
-    def self.find_or_create(name)
+    def self.find_or_create(name:)
         author = Author.find_by_name(name)
         author ||= Author.create(name)
     end
