@@ -1,9 +1,10 @@
 require_relative './config/environment'
 require 'sinatra/activerecord/rake'
-require_all './lib'
+require 'require_all'
+require_all 'lib'
+
 desc "Start our app console"
 task :console do
-
   Pry.start
 end
 
