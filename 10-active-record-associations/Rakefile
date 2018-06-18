@@ -3,6 +3,7 @@ require 'sinatra/activerecord/rake'
 require_all './lib'
 desc "Start our app console"
 task :console do
+
   Pry.start
 end
 

@@ -1,6 +1,7 @@
 class Author < ActiveRecord::Base
 
     has_many :books
+    has_many :characters, through: :books
     
     def show_pen_name
         if self.pen_name

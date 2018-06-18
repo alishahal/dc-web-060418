@@ -41,3 +41,5 @@ end
 add_char_to_book(harry, [ss, cos, poa, gof, ootp, hbp, dh])
 add_char_to_book(tonks, [ootp, hbp, dh])
 ```
+
+- add `has_many :through` and `belongs_to` for character/author
