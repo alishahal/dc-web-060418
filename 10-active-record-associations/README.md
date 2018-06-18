@@ -2,4 +2,4 @@
 
 ## Objectives
 
-* Define `has_many` and `belongs_to` relationships between Ruby classes using ActiveRecord
+* Define one-to-many and many-to-many relationships using ActiveRecord and Ruby modeling

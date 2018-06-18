@@ -7,3 +7,5 @@ Author.find_or_create_by(name: "Charles Dickens")
 Author.find_or_create_by(name: "Maya Angelou")
 Author.find_or_create_by(name: "Charlotte Bronte")
 Author.find_or_create_by(name: "Shel Silverstein")
+Author.find_or_create_by(name: "J.K. Rowling")
+
