@@ -1,12 +1,5 @@
-class Book
+class Book < ActiveRecord::Base
 
-    attr_accessor :title, :author_id
-    attr_reader :id 
-
-    def initialize(title, author_id, id=nil)
-        @title = title
-        @author_id = author_id
-        @id = id
-    end
-
+    belongs_to :author
+    has_and_belongs_to_many :characters
 end
