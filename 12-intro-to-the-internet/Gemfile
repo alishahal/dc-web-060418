@@ -1,7 +1,8 @@
 source "https://rubygems.org"
 
-gem "rack"
-gem "pry"
-gem "shotgun"
-gem "activerecord"
-gem "sinatra-activerecord"
+gem 'pry'
+gem 'require_all'
+gem 'sqlite3'
+gem 'rake'
+gem 'activerecord'
+gem 'sinatra-activerecord'
