@@ -25,8 +25,18 @@ Tools:
 
 ### Request/Response Cycle
 * HTTP Methods and Resource
+    - Get
+    - Post
+    - Delete
+    - Put
+    - Patch
 * CRUD
 * Status codes
+    - 100 - Informational
+    - 200 - Success
+    - 300 - Redirect
+    - 400 - Client Error
+    - 500 - Server Error
 
 ### Static vs. Dynamic Sites
 

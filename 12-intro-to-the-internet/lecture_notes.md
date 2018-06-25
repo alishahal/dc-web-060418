@@ -34,3 +34,4 @@
                 - 500 - Server Error
         - Look at app.rb and config.ru
         - `rackup app.rb` and navigate to local host :9292
+        - NOTE FOR NEXT TIME:  BUILD OUT SOME MORE LOCALHOST STUFF

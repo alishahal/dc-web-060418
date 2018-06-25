@@ -7,7 +7,7 @@ class App
     req = Rack::Request.new(env)
     resp = Rack::Response.new
 
-    resp.write("Hello World")
+    resp.write("<h1>Hello World</h1><a href='https://www.google.com'>GOOGLE</a>")
 
     resp.finish
   end
