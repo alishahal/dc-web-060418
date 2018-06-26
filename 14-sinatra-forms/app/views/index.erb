@@ -4,4 +4,6 @@
 <% @books.each do |book| %>
     <li><a href="/books/<%=book.id%>"><%=  book.title %></a></li>
 <% end %>
+
+<a href="/books/new">Create a new book</a>
 </ul>
