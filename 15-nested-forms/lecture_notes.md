@@ -1,0 +1,10 @@
+- Begin with changing application to:
+    - Have a separate Author table
+    - Add FK relationship from Book to Author
+    - Update GoogleBooks::Adapter to populate Author table and correctly store Author name while preserving author_url / slug capabilities
+        - Including but not limited to:
+            - new migrations to add author table, add author_id to column to books, remove author column from books
+            - create author.rb
+            - move slug method into author class
+            - update googlebooks adapter to use author.slug in author_url
+            - update googlebooks adapter to find_or_create an author
