@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Author Detail page</title>
+</head>
+<body>
+
+    <h1><%= @author.name %></h1>
+    <ul>
+        <% @books.each do |book| %>
+            <li><%= book.title %></li>
+        <% end %>
+    <a href="/authors">Author Index</a>
+</body>
+</html>
