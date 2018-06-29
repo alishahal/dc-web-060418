@@ -1,6 +1,7 @@
 lecture_notes.md
 
 - `rails new snack-tracker`
+- `cd snack-tracker`
 - `rails g model Snack name calories:integer deliciousness:integer`
     - Look at what it's built
         -model
@@ -10,12 +11,16 @@ lecture_notes.md
 -`rails db:migrate`
     - show schema
         - null: false
+        - point out `created_at`, `updated_at`
 - build some seed data
 - Review RESTful routes (index, show, edit, create, new, update, destroy)
-    - `resources :snacks, only: [:index]`
-        - start with the ones we need
+- in config/routes.rb:
+    -`  resources :snacks, only: [:index]`
+- Build a controller
+- `rails g controller Snacks index`
+    - Build this in the wrong directory and show the `rails destroy controller Snacks` command
 - app/controller/snacks_controller.rb
-    resources :snacks, only [:index]
+
 ```
 class SnacksController < ApplicationController
 
@@ -32,9 +37,13 @@ end
 - Go to localhost:3000/index, which is wrong.  Show `rails routes`
     - localhost:3000/snacks
 
-- make data in rails console
-
 - add show route, controller, view.  Will work without restarting.  App folder can change without restart; routes need restart (but I guess not if just changing the only?)
+    - show traditional way of building links, then show `rails routes` again as well as go into `rails c` and show the `app.snacks_path` and other routes `
+    - <%= link_to snack.name, snack_path(snack) %>`
+    - add some css somewhere on the page to introduce
+        - external stylesheets
+        - classes and ids
+        - basic css syntax
 
 - add :new :create
     - @snack = Snack.new
@@ -61,14 +70,13 @@ end
 - Show Snack.create(params) and Snack.create(params[:snack]) give same error.
     - Security risk
         - Mass assignment, can put in bad code
-        - https://xkcd.com/327/
 ```
     def create
         @snack = Snack.create(params.require(:snack).permit(:name, :deliciousness, :calories))
         redirect_to @snack
     end
 ```
-n@
+
 - add :update and :edit to routes
 - edit.html.erb matches new.html.erb
     - move form into `_snack_form.html.erb`
