@@ -1,0 +1,20 @@
+<h3> New Retailer </h3>
+<%= form_for @retailer do |r| %>
+            <%= r.label :name %>
+            <%= r.text_field :name %>
+            <%= r.label :year_established %>
+            <%= r.number_field :year_established %>
+
+    <div class="snack_form">
+        <%= r.fields_for :snacks do |snack| %>
+        <%= snack.label :name %>
+        <%= snack.text_field :name %>
+        <%= snack.label :calories %>
+        <%= snack.number_field :calories %>
+        <%= snack.label :deliciousness %>
+        <%= snack.select :deliciousness, (1..10) %>
+        <% end %>
+    </div>
+<%= r.submit "Submit" %>
+<% end %>
+
