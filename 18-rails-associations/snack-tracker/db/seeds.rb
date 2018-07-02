@@ -7,15 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Snack.destroy_all
+Retailer.destroy_all
 
-Snack.create(name: "Chicken Fingers",
-             calories: 500,
-             deliciousness: 7)
+retailers = Retailer.create([{name: "Hostess", year_established: 1929},
+                                {name: "Girl Scouts", year_established: 1944}])
 
-Snack.create(name: "Pizza Rolls",
-             calories: 600,
-             deliciousness: 8)
-
-Snack.create(name: "Fruit Salad",
-             calories: 200,
-             deliciousness: 9)
+snacks = Snack.create([{name: "Thin Mints", calories: 200, deliciousness: 6, retailer_id: 1},
+                       {name: "Chicken fingers", calories: 650, deliciousness: 8, retailer_id: 2}])
