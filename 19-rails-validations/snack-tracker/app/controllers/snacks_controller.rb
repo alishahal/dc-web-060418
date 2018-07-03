@@ -16,12 +16,9 @@ class SnacksController < ApplicationController
 
   def create
     # post request to make the snack from the form
+    # byebug
     @snack = Snack.create(snack_strong_params)
-    if @snack.errors
-      render :new
-    else
-      redirect_to @snack
-    end
+    redirect_to @snack
   end
 
   def edit
@@ -31,11 +28,7 @@ class SnacksController < ApplicationController
   def update
     # update snack based on form
     @snack.update(snack_strong_params)
-    if @snack.errors
-      render :edit
-    else
-      redirect_to @snack
-    end
+    redirect_to @snack
   end
 
   def destroy

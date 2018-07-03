@@ -13,13 +13,8 @@ class RetailersController < ApplicationController
   end
 
   def create
-    @retailer = Retailer.create(strong_params)
-    if @retailer.errors
-      @retailer.snacks.build
-      render :new
-    else
-      redirect_to retailer_path(retailer)
-    end
+    retailer = Retailer.create(strong_params)
+    redirect_to retailer_path(retailer)
   end
 
   private
