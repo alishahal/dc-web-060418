@@ -51,3 +51,4 @@ build-iPhoneSimulator/
 
 *.sqlite3
 *.db
+*.DS_Store
