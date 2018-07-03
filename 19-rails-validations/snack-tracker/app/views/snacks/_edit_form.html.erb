@@ -1,0 +1,23 @@
+
+
+<%= render partial: "shared/errors", locals: {new_object: @snack} %>
+
+<%= form_for @snack do |f| %>
+    <div class="snack-form-field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    </div>
+    <div class="snack-form-field">
+    <%= f.label :calories %>
+    <%= f.number_field :calories, step: 50 %>
+    </div>
+    <div class="snack-form-field">
+    <%= f.label :deliciousness %>
+    <%= f.select :deliciousness, (1..10) %>
+    </div>
+    <div class="snack-form-field">
+    <%= f.label :retailer %>
+    <%= f.collection_select(:retailer_id, Retailer.all, :id, :name, prompt: true) %>
+    </div>
+    <%= f.submit "Snackify" %>
+<% end %>
