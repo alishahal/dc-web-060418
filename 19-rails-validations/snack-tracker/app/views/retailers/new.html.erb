@@ -1,5 +1,7 @@
 <h1>Build a new Retailer</h1>
 
+<%= render partial: "shared/error_display", locals: {object: @retailer} %>
+
 <%= form_for @retailer do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>

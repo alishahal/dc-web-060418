@@ -1,6 +1,6 @@
 <%= form_for @snack do |f| %>
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :required => true %>
     <%= f.label :calories %>
     <%= f.number_field :calories, step: 50 %>
     <%= f.label :deliciousness %>

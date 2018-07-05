@@ -2,6 +2,7 @@ class SnacksController < ApplicationController
   
   before_action :find_snack, only: [:edit, :update, :show]
 
+
   def index
     @snacks = Snack.all
   end
@@ -18,7 +19,11 @@ class SnacksController < ApplicationController
     # post request to make the snack from the form
     # byebug
     @snack = Snack.create(snack_strong_params)
-    redirect_to @snack
+    if @snack.errors
+      render :new
+    else
+      redirect_to @snack
+    end
   end
 
   def edit
