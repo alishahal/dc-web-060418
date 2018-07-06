@@ -1,8 +1,10 @@
-- Talk about using Git for atomic commits
-
 - uncomment bcrypt in Gemfile
 
-- add has_secure_password to User model
+- add `has_secure_password` to User model
+
+- add password_digest in a migration
+`rails g migration AddPasswordDigestToUsers password_digest:string
+`
 
 - create user in console
 - `user = User.create(username: "paul", password: "password")`
@@ -26,11 +28,13 @@ new.html.erb
 ```
 <h1>Create a new user or <%= link_to "login", login_path %></h1>
 
-<%= form_for :user do |f| %>
+<%= form_for @user do |f| %>
     <%= f.label :username %>
     <%= f.text_field :username %>
     <%= f.label :password %>
-    <%= f.text_field :password %>
+    <%= f.password_field :password %>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
     <%= f.submit %>
 <% end %>
 ```
@@ -48,8 +52,7 @@ class UsersController < ApplicationController
         @user.save
         redirect_to snacks_path
     else
-        flash[:error] = @user.errors.full_messages
-        redirect_to new_user_path
+        render :new
     end
   end
 
@@ -57,22 +60,43 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :password_confirmation)
   end
 
 end
 ```
-Demo creating a user.  How do I make a password field in Rails?  
+Demo creating a user.  Should log in upon user-creation:
+
+users_controller.rb
+```
+
+``` 
 
 add to login view:
 
 ```
-    <%= label_tag "Password" %>
-    <%= password_field_tag :password %>
+  <%= label_tag "Password" %>
+  <%= password_field :password %>
 ```
 
 Try to login with byebug in SessionsController#create
 
-@user.authenticate(params[:password])
+`@user.authenticate(params[:password])`
 
 This will break if `user` is undefined--check for `@user && @user.authenticate...`
+
+OR 
+
+```rb
+  def create
+  @user = User.find_by(username: params[:username])
+
+  if @user&.authenticate(params[:password])
+      session[:user_id] = @user.id 
+      redirect_to snacks_path
+  else
+      flash.notice = "Username and password do not match"
+      render :new
+  end
+end
+```
