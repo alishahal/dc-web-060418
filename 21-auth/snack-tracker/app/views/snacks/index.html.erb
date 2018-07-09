@@ -1,4 +1,8 @@
-<h1>Snacks Index Page</h1>
+<h1><%= logged_in_user %>'s Snacks Index Page</h1>
+
+
+My favorite cookie is: <%= cookies['favorite'] %>
+My secret favorite cookie is <%= session['favorite'] %>
 
 <ul id="snack-list">
 <% @snacks.each do |snack| %>
