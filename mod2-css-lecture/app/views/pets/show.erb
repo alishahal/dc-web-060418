@@ -1,0 +1,13 @@
+<h1 id="pet_name"><%= @pet.name %></h1>
+<h2 class="pet_labels">Species</h2>
+<%= @pet.species %>
+<h2 class="pet_labels">Owner</h2>
+<%= link_to @pet.owner.name, url_for(@pet.owner) %>
+<br>
+
+<button class="pet_links">
+<%= link_to "Edit Pet", edit_pet_path %>
+</button>
+<button class="pet_links">
+<%= link_to "Delete", @pet, method: :delete, data: { confirm: "Really?" } %>
+</button>

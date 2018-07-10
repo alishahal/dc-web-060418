@@ -1,0 +1,30 @@
+<!---Header Row with 1 column--->
+<div class="row">
+  <div class="col-md-12">
+    <h1><%= @owner.name %></h1>
+  </div>
+</div>
+<!---Second Row with 1 column--->
+<div class="row">
+  <div class="col-md-12">
+    <h2> Pets: </h2>
+    <% @owner.pets.each do |pet| %>
+      <li>
+        <%= link_to pet.name, pet_path(pet) %>
+      </li>
+    <% end %>
+  </div>
+</div>
+<!---Third Row with 2 columns--->
+<div class ="row">
+  <div class="col-md-6">
+    <div class="btn btn-primary">
+      <%= link_to "Edit Owner", edit_owner_path, :class => "btn"%>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="btn btn-primary">
+      <%= link_to "Delete", @owner, method: :delete, data: { confirm: "Really?" }, :class => "btn" %>
+    </div>
+  </div>
+</div>
