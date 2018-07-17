@@ -6,13 +6,13 @@
 
 ### Selectors and how to use them
 
-| Selector name                   | Return shape   | Return type    | Live? | Reference             | forEach? |
-| ------------------------------- | -------------- | -------------- | ----- | --------------------- | -------- |
-| `document.getElementById()`        | Single element | Element        | N/A   | https://goo.gl/8cHGoy | N/A      |
-| `element.getElementsByClassName()` | Collection     | HTMLCollection | Yes   | https://goo.gl/qcAhcp | No       |
-| `element.getElementsByTagName()`   | Collection     | HTMLCollection | Yes   | https://goo.gl/QHozSh | No       |
-| `element.querySelector()`          | Single element | Element        | N/A   | https://goo.gl/6Pqbcc | N/A      |
-| `element.querySelectorAll()`       | Collection     | NodeList       | Node  | https://goo.gl/vTfXza | Yes      |
+| Selector name                   | Return shape   | Return type    | Reference             | forEach? |
+| ------------------------------- | -------------- | -------------- | --------------------- | -------- |
+| `document.getElementById()`        | Single element | Element        | https://goo.gl/8cHGoy | N/A      |
+| `element.getElementsByClassName()` | Collection     | HTMLCollection | https://goo.gl/qcAhcp | No       |
+| `element.getElementsByTagName()`   | Collection     | HTMLCollection | https://goo.gl/QHozSh | No       |
+| `element.querySelector()`          | Single element | Element        | https://goo.gl/6Pqbcc | N/A      |
+| `element.querySelectorAll()`       | Collection     | NodeList       | https://goo.gl/vTfXza | Yes      |
 
 ### Grabbing and Manipulating DOM elements
 - Twitter
