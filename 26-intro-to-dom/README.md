@@ -8,11 +8,11 @@
 
 | Selector name                   | Return shape   | Return type    | Reference             | forEach? |
 | ------------------------------- | -------------- | -------------- | --------------------- | -------- |
-| `document.getElementById()`        | Single element | Element        | https://goo.gl/8cHGoy | N/A      |
-| `element.getElementsByClassName()` | Collection     | HTMLCollection | https://goo.gl/qcAhcp | No       |
-| `element.getElementsByTagName()`   | Collection     | HTMLCollection | https://goo.gl/QHozSh | No       |
-| `element.querySelector()`          | Single element | Element        | https://goo.gl/6Pqbcc | N/A      |
-| `element.querySelectorAll()`       | Collection     | NodeList       | https://goo.gl/vTfXza | Yes      |
+| `node.getElementById()`        | Single element | Element        | https://goo.gl/8cHGoy | N/A      |
+| `node.getElementsByClassName()` | Collection     | HTMLCollection | https://goo.gl/qcAhcp | No       |
+| `node.getElementsByTagName()`   | Collection     | HTMLCollection | https://goo.gl/QHozSh | No       |
+| `node.querySelector()`          | Single element | Element        | https://goo.gl/6Pqbcc | N/A      |
+| `node.querySelectorAll()`       | Collection     | NodeList       | https://goo.gl/vTfXza | Yes      |
 
 ### Grabbing and Manipulating DOM elements
 - Twitter
