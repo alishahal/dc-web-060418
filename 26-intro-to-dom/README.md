@@ -1,4 +1,4 @@
-#Document Object Model vs. HTML
+# Document Object Model vs. HTML
 - Tree of Nodes
 
 ### DOM nodes, parent child sibling relationships
@@ -8,7 +8,7 @@
 
 | Selector name                   | Return shape   | Return type    | Reference             | forEach? |
 | ------------------------------- | -------------- | -------------- | --------------------- | -------- |
-| `node.getElementById()`        | Single element | Element        | https://goo.gl/8cHGoy | N/A      |
+| `node.getElementById()`         | Single element | Element        | https://goo.gl/8cHGoy | N/A      |
 | `node.getElementsByClassName()` | Collection     | HTMLCollection | https://goo.gl/qcAhcp | No       |
 | `node.getElementsByTagName()`   | Collection     | HTMLCollection | https://goo.gl/QHozSh | No       |
 | `node.querySelector()`          | Single element | Element        | https://goo.gl/6Pqbcc | N/A      |
@@ -26,10 +26,10 @@
 - Array.from()
 
 ### CRUD
-- createElement()
-- appendChild()
-- removeChild()
-- innerHTML
+- document.createElement()
+- node.appendChild()
+- node.removeChild()
+- node.innerHTML
 
 
 ### Customer HTML attributes (metadata)
