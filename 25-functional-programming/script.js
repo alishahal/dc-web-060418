@@ -45,7 +45,7 @@
 // flatironOnboarding("Ann", giveStudentKeyCard)
 // flatironOnboarding("Rob", giveStudentKeyCard)
 
-// function createWelcomeNewStudentToModFactory(num){
+// function createWelcomeNewStudentToModFunction(num){
 //   let studentId = 0;
 //   return function(studentName){
 //     studentId++;
@@ -89,7 +89,7 @@
 //   end
 //
 // end
-// 
+//
 // arr = [Instructor.new("Ann", 100), Instructor.new("Paul", 100)]
 //
 // arr.each{ |x| x.give_raise(100)}
