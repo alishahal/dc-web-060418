@@ -17,9 +17,16 @@
 - `rails g serializer cat`
 
 ### Serializer
+- remove data clients don't car about
+- add custom relationship data that our clients maybe do care about
 
 ### CRUD
 
 
 ### CORS
 - Cross Origin Resource Sharing
+
+1. manual
+2. serializer
+3. update models
+4. CRUD
