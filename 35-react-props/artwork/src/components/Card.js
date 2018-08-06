@@ -1,13 +1,16 @@
 import React from 'react'
 
-const Card = (props) => {
-  console.log(props)
+const Card = ({painting}) => {
+  let {artist, dimensions} = painting
+  console.log(artist)
+
+  // console.log(props)
   return(
     <div className="ui card">
-      <div><img src={props.painting.image}/></div>
-      <p>{`${props.painting.title} by ${props.painting.artist.name}`}</p>
-      <p>{props.painting.date}</p>
-      <p>{`${props.painting.dimensions.width} in. x ${this.props.painting.dimensions.height}`}</p>
+      <div><img alt={painting.title} src={painting.image}/></div>
+      <p>{`${painting.title} by ${artist.name}`}</p>
+      <p>{painting.date}</p>
+      <p>{`${dimensions.width} in. x ${dimensions.height}`}</p>
     </div>
   )
 }

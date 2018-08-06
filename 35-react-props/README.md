@@ -12,6 +12,13 @@
 
 ## Object Destructuring
 
+```
+let obj = {a: "aVar", b: "bye"}
+let {a, b} = obj
+//a => "aVar"
+//b => "bye"
+```
+
 ## React Docs and Tutorial
 - https://reactjs.org/docs/add-react-to-a-website.html
 - https://reactjs.org/tutorial/tutorial.html
