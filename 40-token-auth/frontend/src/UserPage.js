@@ -1,11 +1,27 @@
 import React from "react";
 
-const baseUrl = "http://localhost:3001";
+const baseUrl = "http://localhost:3000";
 
 class UserPage extends React.Component {
   state = {
     user: null
   };
+
+  componentDidMount() {
+    let token = localStorage.getItem("token");
+    if (token) {
+      fetch(baseUrl + "/user", {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+        .then(res => res.json())
+        .then(data => {
+          this.setState({ user: data });
+        })
+        .catch(e => console.error(e));
+    }
+  }
 
   render() {
     return (

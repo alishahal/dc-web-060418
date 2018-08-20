@@ -5,7 +5,8 @@ const baseUrl = "http://localhost:3000";
 class Login extends React.Component {
   state = {
     username: "",
-    password: ""
+    password: "",
+    error: ""
   };
 
   login = e => {
@@ -16,18 +17,24 @@ class Login extends React.Component {
       password: this.state.password
     };
 
-    let url = "http://localhost:3001/login";
+    let url = "http://localhost:3000/login";
 
     fetch(url, {
       method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(params)
+      body: JSON.stringify(params),
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      }
     })
       .then(res => res.json())
-      .then(res => {
-        console.log(res);
-        localStorage.setItem("token", res.token);
-        this.props.logIn();
+      .then(data => {
+        if (data.success) {
+          localStorage.setItem("token", data.token);
+          this.setState({ error: "" });
+        } else {
+          this.setState({ error: "Invalid username or password" });
+        }
       });
   };
 
@@ -49,6 +56,7 @@ class Login extends React.Component {
           />
           <button onClick={this.login}>Login</button>
         </form>
+        <span style={{ color: "red" }}>{this.state.error}</span>
       </div>
     );
   }

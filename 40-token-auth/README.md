@@ -14,9 +14,10 @@ Authentication
 
 Authorization
   permission - based on who you are, what are you allowed to do?
-
   `current_user` - check role, access level
 
+
+# Recap in Mod 2
 Rails mod 2 version - Authentication
 - bcrypt - password storage (hashed, salted passwords)
 - has_secure_password
@@ -45,6 +46,23 @@ when we're using fetch, browser doesn't send the cookie for us (won't set the co
 when we use fetch, cookies won't get set
 
 We are responsible in javascript for supplying the authentication info
+
+## Where to keep the token?
+
+state - why not?
+- destroyed on refresh
+
+cookies
+- decent, API is worse
+
+localStorage
+- should persist across refreshes
+- clear
+- getItem
+- setItem
+- partitioned by host
+
+url - badddddd idea
 
 ## Token Auth
 
