@@ -22,6 +22,14 @@ Methods:
  - dispatch: send an action to the store, reducer will use to update the store
 
 ### Reducers
+takes in an action, current state
+returns a new state
+sets a default in case the state hasn't been defined yet
+pure function
+maps previous state to a new state, using the action
+
+(states are objects)
+
 - function to decide how to update the state
 - state, action -> state
 
