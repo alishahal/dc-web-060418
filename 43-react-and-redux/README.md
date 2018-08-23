@@ -9,6 +9,9 @@
 
 ## Problems
 
+What is the best place to call the dispatch with the initial action?
+(When / in what file should we create the store?)
+
 How do we structure the store?
 - Does it get its own file?
 - What about the Reducer?
@@ -21,14 +24,30 @@ Component does not rerender when store state is updated
   - it would be cool if store state was a prop to our component
   - like to remove our bad hack
 
+  - removed with `connect`
+
 ## Provider
+
+a react component!
 
 ## Connect
 
-## mapStateToProps
+```
+RouterConnectedHeader = withRouter(Header)
+// in your header
+this.props.location
+this.props.history
+```
 
-## mapDispatchToProps
+```
+howToConnect = connect(mapStateToProps, mapDispatchToProps, {})
+howToConnect(Header) // possible
+howToConnect(Other)
+```
 
-## File structure
+
+## Conventions
+
+Move logic out of components
 
 ## combineReducers
