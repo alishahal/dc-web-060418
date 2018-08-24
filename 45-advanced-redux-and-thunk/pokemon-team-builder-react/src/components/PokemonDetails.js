@@ -1,7 +1,12 @@
 import React from "react";
+import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+import { addToTeam } from "../redux/action";
 
-const PokemonDetails = ({ pokemon }) => {
+const PokemonDetails = ({ pokemon, addToTeam, currentlyFetching }) => {
+  if (currentlyFetching) {
+    return "Loading...";
+  }
   return (
     <div className="card details">
       Pokemon Details{pokemon == null ? null : (
@@ -30,12 +35,31 @@ const PokemonDetails = ({ pokemon }) => {
               pokemon.stats[5].base_stat
             }`}</div>
           </div>
+          <button onClick={() => addToTeam(pokemon)}>Add To Team</button>
         </div>
       )}
     </div>
   );
 };
 
-const mapStateToProps = ({ detailPokemon }) => ({ pokemon: detailPokemon });
+const mapStateToProps = ({ detailPokemon, currentlyFetching }) => ({
+  pokemon: detailPokemon,
+  currentlyFetching
+});
 
-export default connect(mapStateToProps)(PokemonDetails);
+// const addToTeam = pokemon => ({
+//  type: "ADD_TO_TEAM",
+//  pokemon
+// });
+
+// const mapDispatchToProps = dispatch => ({
+// addToTeam: (...args) => dispatch(addToTeam(...args))
+// });
+
+// const mapDispatchToProps = dispatch =>
+// bindActionCreators(actionCreators, dispatch);
+
+export default connect(
+  mapStateToProps,
+  { addToTeam }
+)(PokemonDetails);

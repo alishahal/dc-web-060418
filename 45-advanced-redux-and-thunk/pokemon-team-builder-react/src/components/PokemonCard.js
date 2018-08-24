@@ -9,7 +9,9 @@ const PokemonCard = ({ pokemon, handleDoubleClick, handleSingleClick }) => {
         handleDoubleClick(pokemon);
       }}
       onClick={() => {
-        handleSingleClick(pokemon.url);
+        if (pokemon.url) {
+          handleSingleClick(pokemon.url);
+        }
       }}
     >
       {pokemon == null ? null : pokemon.name}
@@ -19,6 +21,7 @@ const PokemonCard = ({ pokemon, handleDoubleClick, handleSingleClick }) => {
 
 const mapDispatchToProps = dispatch => {
   const showPokemonDetails = url => {
+    dispatch({ type: "FETCHING_POKEMON_DETAILS" });
     fetch(url)
       .then(response => response.json())
       .then(json => {
