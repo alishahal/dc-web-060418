@@ -4,17 +4,13 @@ import PokemonDetails from "../components/PokemonDetails";
 import Searchbar from "../components/Searchbar";
 import { TeamList, AllList } from "./PokemonList";
 import { connect } from "react-redux";
+import { onClear, loadPokemon } from "../redux/action";
 
-const URL = "https://pokeapi.co/api/v2/pokemon/?limit=151";
 // const URL = 'http://localhost:3000/pokemon'
 
 class App extends Component {
   componentDidMount() {
-    fetch(URL)
-      .then(response => response.json())
-      .then(json => {
-        this.props.fetchedPokemon(json.results);
-      });
+    this.props.loadPokemon();
   }
 
   render() {
@@ -38,15 +34,7 @@ class App extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onClear: () => dispatch({ type: "CLEAR" }),
-    fetchedPokemon: allPokemon =>
-      dispatch({ type: "FETCHED_ALL_POKEMON", allPokemon })
-  };
-};
-
 export default connect(
   null,
-  mapDispatchToProps
+  { loadPokemon, onClear }
 )(App);
