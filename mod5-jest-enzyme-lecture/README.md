@@ -68,7 +68,10 @@ and `import renderer from 'react-test-renderer'` into files where you you will b
 }
 ```
 
-- create a jestsetup.js in your source folder and paste in this code ```import Enzyme, { shallow, render, mount } from 'enzyme';
+- create a jestsetup.js in your source folder and paste in this code. This will allow you to write enzyme tests without having to import the adapter or methods.
+
+```
+import Enzyme, { shallow, render, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 <!-- // React 16 Enzyme adapter -->
 Enzyme.configure({ adapter: new Adapter() });
@@ -77,5 +80,3 @@ global.shallow = shallow;
 global.render = render;
 global.mount = mount;
 ```
-
-- now you are set to write enzyme tests without having to import the adapter or methods
